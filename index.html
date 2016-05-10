@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5/jquery.mobile.theme-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/SQLite/dataBase.js"></script>
+
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+    		$('#Insertar').attr('disabled','disabled');
+    		$('#nombre').attr('disabled','disabled');
+
+    		$('#documento').change(function(){
+        		if($(this).val != ''){
+            		$('#nombre').removeAttr('disabled');
+        		}
+    		});
+
+    		$('#nombre').change(function(){
+        		if($(this).val != ''){
+            		$('#Insertar').removeAttr('disabled');
+        		}
+    		});
+		});    	
+        </script>
+
+	<title>RedColsi nodo Santander</title>
+</head>
+<body onload="populateDB()";>
+
+	<SECTION data-role="page">
+
+		<HEADER data-role="header">
+			<h1>MiniCurso SQLite RedColsi</h1>
+		</HEADER>
+
+		<CONTENT data-role="content">
+			<form id="formulario">
+				<label for="documento">Documento: </label>
+				<input id="documento" placeholder="Ex. 0000" type="number" required></input>
+
+				<label for="nombre">Nombre: </label>
+				<input id="nombre" placeholder="Ex. Pepito" type="text" required></input>
+
+				<div id="resultados" style="width: 100%; height: 150px;">
+				</div>
+
+				<input type="button" id="Insertar" value="Insertar" name="Insertar" onclick="insertar();" ></input>
+				
+				<input type="button" id="Consultar" value="Consultar" name="Consultar" onclick="consultar();"></input>
+			</form>
+		</CONTENT>
+
+		<FOOTER data-role="footer">
+			<h1>Colegio San José de Guanentá</h1>
+		</FOOTER>
+
+	</SECTION>
+
+</body>
+</html>
