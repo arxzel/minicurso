@@ -70,7 +70,8 @@ function insertar(){
 		alert("Ha ocurrido un error en "+err+" al insertar los registros");
 	}
 	function succInsert(){
-		$('#resultados').html("<h3>Registro Guardado con éxito </h3><input type='button' value='Modificar' name='Modificar' onclick='modificar('+response.rows.item(i).id_datos+');'></input>");
+		//var codigo ="<h3>Registro Guardado con éxito </h3>";
+		//$('#resultados').html(codigo);
 	}
 
 
@@ -84,6 +85,10 @@ function consultar(){
 }
 
 	function consuReg(tx){
+		/*
+			tx.executeSql("query",[],FuncionExito,FuncionFracaso);
+		*/
+		//tx.executeSql("SELECT * from datos",[],function(){alert('Exito');},function(err){alert('error al consultar');});
 
 	}
 	function errCons(err){
@@ -171,5 +176,5 @@ function eliminar(){
 
 	/*Recursos Extras*/
 
-				//<input type='button' value='Modificar' name='Modificar' onclick='modificar('+response.rows.item(i).id_datos+');'></input>
-				//<input type='button' value='Eliminar' name='Eliminar' onclick='eliminar('+response.rows.item(i).id_datos+');'></input>
+				//<input type='button' value='modificar' name='modificar' onclick='modificar('+response.rows.item(i).id_datos+');'></input>;
+				//<input type='button' value='eliminar' name='eliminar' onclick='eliminar('+response.rows.item(i).id_datos+');'></input>;
